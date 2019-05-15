@@ -3,24 +3,24 @@ id: nervos-intro
 title: What is Nervos?
 ---
 
-Nervos envisions a future called Crypto Economies, where users' assets are represented by different kinds of tokens and are traded in a financial system that is open and programmable. In such a world, the trading friction of different assets are largely lower than the original economy system, and the social resource can be allocated to the right hand in a faster and better way, which will eventually make this world a better place.
+Nervos envisions a decentralized economy, where users' assets are represented by different kinds of tokens that are traded in an open and programmable financial system. In this world, the friction of trading different assets is significantly lower than traditional systems and resources are allocated more faster and more effectively, eventually making the world a better place.
 
-To realize this vision, we will need an infrastructure for securely storing users' assets (tokens) as well as making them programmable, so that we can design different tokens and transact them intelligently.
+Realizing this vision will require infrastructure to securely store users' assets (tokens), as well as making them programmable. This provides the ability to design different types of tokens and the means to transact with them intelligently.
 
 The mission of Nervos is to build this infrastructure.
 
 ![nervos-log](assets/nervos-layers.png)
 
-Nervos has a layered architecture, which has a single Layer 1 and many Layer 2 systems. The layer 1 is named Common Knowledge Base (CKB) focusing on security and decentralization. Developers are able to construct their own layer 2 systems rooted in and interoperable with CKB focusing on functionalities and performance.
+Nervos has a layered architecture, with a single Layer 1 and many Layer 2 systems. Layer 1 is referred to as the 'Common Knowledge Base' or CKB, which is focused on providing security and decentralization. Developers are able to construct their own Layer 2 systems, focused on functionality and performance, utlizing the CKB to provide underlying security and interoperability with other protocols running on CKB.
 
-> To learn more about the layered architecture of Nervos, please refer [Nervos Whitepaper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md).
+> To learn more about the layered architecture of Nervos, please refer to [Nervos Whitepaper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md).
 
-In Nervos, there is a utility token named CKB that users can use to pay for blockchain resources, which are needed for issuing and storing different tokens. This token also secures the blockchain system by providing incentives for the node operators and miners in the CKB system.
+In Nervos, there is a utility token named CKB (or CK Bytes) that represents rights to store data on CKB. Issuing or storing any asset on the CKB requires holding an appropriate amount of the CKB token. For example, 100 CKB would allow a user to store 100 bytes on the blockchain. Issuance of this token also secures the blockchain, incentivizing miners to compete for block rewards.
 
-> To learn more about the CKB token, please refer [Nervos Token Economics paper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md).
+> To learn more about the CKB token, please refer to [Nervos Token Economics paper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md).
 
 > CKB is both the token name and the name of the Layer 1 blockchain.
-
+stopped here
 ## Nervos CKB
 
 Nervos Common Knowledge Base (CKB) is a permission-less public blockchain system. On the CKB platform, both the Native Token(CKB) and the User Defined Tokens (UDT) can be programmed with Turing complete scripts.
