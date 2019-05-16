@@ -20,41 +20,43 @@ In Nervos, there is a utility token named CKB (or CK Bytes) that represents righ
 > To learn more about the CKB token, please refer to [Nervos Token Economics paper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md).
 
 > CKB is both the token name and the name of the Layer 1 blockchain.
-stopped here
+
 ## Nervos CKB
 
-Nervos Common Knowledge Base (CKB) is a permission-less public blockchain system. On the CKB platform, both the Native Token(CKB) and the User Defined Tokens (UDT) can be programmed with Turing complete scripts.
+The Nervos Common Knowledge Base (CKB) is a permissionless public blockchain. On the CKB platform, both the Native Token (CKB) and User Defined Tokens (UDT) can be programmed with Turing-complete scripts.
 
-In a blockchain context, common knowledge refers to states verified by global consensus and Nervos CKB is designed to be a state verification system.
+In a blockchain context, 'common knowledge' refers to states verified by global consensus. Similar to Bitcoin, Nervos CKB is designed to be a state verification system.
 
-Comparing with Bitcoin, which was designed to be programmable money, CKB is designed to be a programmable assets platform, as not only the native CKB itself can be programmed with Turing complete scripts, but also all the User Defined Tokens (UDTs) can be programmed in the same way the CKB token is.
+Comparing with Bitcoin, which was designed to be programmable money, CKB is designed to be a programmable assets platform. User Defined Tokens (UDTs) can be programmed with Turing complete scripts the same way the CKB token can be.
 
-Ethereum was designed to be a world computer that provides functions of programmable escrow account. On Ethereum, you also can program the behavior of non-custodian accounts (i.e. smart contracts) to make UDTs such as ERC20 or ERC721. To compare with, CKB let users program token directly without going through an account. This design philosophy difference leads to two different programming models, which you will be learning about in the later parts of this documentation.
+Ethereum was designed to be a world computer that provides the function of a programmable escrow account. On Ethereum, users can program the behavior of non-custodian accounts (i.e. smart contracts) to make UDTs such as ERC20 or ERC721 tokens. In contrast, CKB allows users to program tokens directly, without going through an account. This design philosophy creates a new programming model, which will be cover in later parts of this documentation.
 
 
 ## CKB Features
 
-Here introduce features of CKB that make it different from other public blockchain platforms in terms of the protocol design.
+Here we introduce features of CKB that make it different from other public blockchain platforms in terms of the protocol design.
 
 ### Nakamoto Consensus Max
-Nervos CKB adopts an improved Nakamoto Consensus algorithm called NC-Max as the consensus mechanism. NC-Max uses orphan block rate as the on-chain network bandwidth status indicator and dynamically adjust the block interval to achieve better network bandwidth usage efficiency as well as making selfish mining unprofitable.
+Nervos CKB adopts an improved Nakamoto Consensus algorithm called NC-Max as the consensus mechanism. NC-Max uses orphan block rate as an on-chain network bandwidth status indicator and dynamically adjusts the block interval to achieve better network bandwidth usage efficiency, as well as making selfish mining unprofitable.
 
-To learn more about NC-Max, please refer [this presentation video](https://www.youtube.com/watch?v=HSXzbgVRH_M).
+To learn more about NC-Max, please refer to [this presentation video](https://www.youtube.com/watch?v=HSXzbgVRH_M).
 
 ### Cell Model
 
-Nervos CKB adopts a generalized UTXO model called Cell model for describing and programming both native token CKB and User Defined Tokens (UDT).
+Nervos CKB adopts a generalized UTXO model called the 'Cell model' for describing and programming both the native token CKB and User Defined Tokens (UDT).
 
 You can find this concept explained in a [latter section](../basic-concepts/architecture.md#cell), or you can refer to the [Nervos Whitepaper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0002-ckb/0002-ckb.md) where you can find a high-level comprehensive explanation.
 
 ### RISC-V Based CKB-VM
-CKB-VM is a virtual machine designed for CKB blockchain. It is a software simulator based on [RISC-V](https://riscv.org/) instruction set. With CKB-VM, you can program in any language that has a compiler supported by RISC-V, such as C/C++ and high-level programming languages such as Javascript, Python, and Ruby. Moreover, with CKB-VM you can execute any kinds of hash function and signature function on-chain, which means you will be able to define your own private key verification function for your assets/tokens, instead of limited by a set of predefined crypto primitives.
+CKB-VM is a virtual machine designed for the CKB blockchain. It is a software simulator based on the [RISC-V](https://riscv.org/) instruction set. With CKB-VM, you can program in any language that has a compiler supported by RISC-V, such as C/C++ and other high-level programming languages such as Javascript, Python, and Ruby. Moreover, with CKB-VM you can execute any kind of hash function or signature function on-chain, meaning you will be able to define your own private key verification function for your assets/tokens, instead of being limited by a set of predefined crypto primitives.
 
-To learn more about CKB-VM, please refer [CKB-VM paper](https://github.com/nervosnetwork/rfcs/tree/master/rfcs/0003-ckb-vm).
+To learn more about CKB-VM, please refer to [CKB-VM paper](https://github.com/nervosnetwork/rfcs/tree/master/rfcs/0003-ckb-vm).
 
 ### Token Economics
-The CKB economic model focuses on the state. The native token (CK Bytes) represent rights to occupy state storage. For example: holding 1000 CK Bytes would allow the user to create a cell with 1000 bytes in capacity, or multiple cells that add up to 1000 bytes in capacity.
+The CKB economic model focuses on the state. The native token (CK Bytes) represents rights to occupy state storage. For example: holding 1000 CK Bytes would allow the user to create a cell with 1000 bytes in capacity, or multiple cells that add up to 1000 bytes in capacity.
 
-Owners utilize their CK Bytes to store state or can lend capacity to others. An implicit storage cost proportional to space and time is created: if an owner utilizes their cell to store state, they will incur an opportunity cost equivalent to what they could have earned by lending out the capacity. This is the CKB's solution to the 'state bloat' problem.
+Owners utilize their CK Bytes to store state or can lend capacity to others. To resolve the long-standing 'state bloat' problem, CKB utilizes targeted inflation. A secondary issuance is issued to miners along with block rewards, if a user holds CK Bytes and is utilizing them to store data on the CKB, their portion of the secondary issuance will go to the miners. 
 
-To learn more about the CKB token economics, please refer [token economics paper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md).
+If a user holds CK Bytes but is not utilizing them to store data on the CKB, these tokens can be locked in the onchain NervosDAO and the owners can then receive a proportional share of the secondary issuance. This inflation model creates an implicit storage cost proportional to space and time if an owner utilizes their cell to store state.
+
+To learn more about the CKB token economics, please refer to [token economics paper](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md).
