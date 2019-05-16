@@ -100,6 +100,6 @@ In CKB, a block also contains the information of uncle blocks in the block struc
 
 There are two limitations for miners to consider when selecting transactions to pack into a block: computing cycles and transaction size.
 
-In CKB, computation resources consumed by transaction verification, specifically the script's execution, is measured with `cycles`. Each instruction in CKB-VM may [cost different cycles](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0014-vm-cycle-limits/0014-vm-cycle-limits.md#instruction-cycles). The sum cycles cost by all scripts executed in transaction verification in a block is limited to a value defined by the CKB protocol called `MAX_BLOCK_CYCLES`.
+In CKB, computation resources consumed by transaction verification (specifically the script's execution) are measured with `cycles`. Each instruction in CKB-VM may [cost different cycles](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0014-vm-cycle-limits/0014-vm-cycle-limits.md#instruction-cycles). The sum cycles cost of all scripts executed in transaction verification in a block is limited to a value defined by the CKB protocol called `MAX_BLOCK_CYCLES`.
 
 The size of a transaction is measured in bytes. The sum size of all the transactions in a block should be lower than `MAX_BLOCK_BYTES`.
